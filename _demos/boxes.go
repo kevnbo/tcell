@@ -84,6 +84,8 @@ func main() {
 			case *tcell.EventKey:
 				switch ev.Key() {
 				case tcell.KeyEscape, tcell.KeyEnter:
+					s.Fini()
+					os.Exit(0)
 					close(quit)
 					return
 				case tcell.KeyCtrlL:
